@@ -1,0 +1,11 @@
+make --dry-run --always-make --keep-going --print-directory
+make: Entering directory '/home/ricardo-00/42school/42Lisboa/ft_printf/ft_printf'
+gcc -Wall -Wextra -Werror   -c -o ft_printfcheck.o ft_printfcheck.c
+gcc -Wall -Wextra -Werror   -c -o ft_put_nbr_base.o ft_put_nbr_base.c
+gcc -Wall -Wextra -Werror   -c -o ft_put_nbr_u.o ft_put_nbr_u.c
+gcc -Wall -Wextra -Werror   -c -o ft_putchar.o ft_putchar.c
+gcc -Wall -Wextra -Werror   -c -o ft_putstr.o ft_putstr.c
+gcc -Wall -Wextra -Werror   -c -o ft_strlen.o ft_strlen.c
+ar rcs ft_printf.a ft_printfcheck.o ft_put_nbr_base.o ft_put_nbr_u.o ft_putchar.o ft_putstr.o ft_strlen.o
+make: Leaving directory '/home/ricardo-00/42school/42Lisboa/ft_printf/ft_printf'
+ 
