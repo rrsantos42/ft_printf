@@ -1,30 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_prinntf.h                                       :+:      :+:    :+:   */
+/*   ft_put_pointer.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rsantos <rsantos@student.42lisboa.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/18 04:39:31 by rsantos           #+#    #+#             */
-/*   Updated: 2022/08/18 06:14:19 by rsantos          ###   ########.fr       */
+/*   Created: 2022/08/19 02:24:53 by rsantos           #+#    #+#             */
+/*   Updated: 2022/08/19 02:59:25 by rsantos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-#define FT_PRINTF_H
-
-#include <stdio.h>
-#include <stdlib.h>
-#include <unistd.h>
-
-int	ft_putchar(char c);
-int	ft_strlen(char *str);
-int	ft_putstr(char *str);
-int	ft_putnbr_base(int nbr, char *base);
-int	ft_put_nmr_u(unsigned int nbr);
-void	ft_printcheck(char c);
+#include "ft_printf.h"
 
 
-
-
-#endif
+unsigned long ft_put_pointer(unsigned long nb, char *str)
+{
+	static int nbr;
+	
+	while (nb >= (unsigned long)ft_strlen(str))
+		nbr += ft_put_pointer((nb / ft_strlen(str)), str);
+	nbr += ft_putchar(str[nb % ft_strlen(str)]);
+	return(nbr);
+	
+}

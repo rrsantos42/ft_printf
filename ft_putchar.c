@@ -6,9 +6,11 @@
 /*   By: rsantos <rsantos@student.42lisboa.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/18 04:49:46 by rsantos           #+#    #+#             */
-/*   Updated: 2022/08/18 04:50:16 by rsantos          ###   ########.fr       */
+/*   Updated: 2022/08/19 01:48:29 by rsantos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "ft_printf.h"
 
 int	ft_putchar(char c)
 {
