@@ -6,7 +6,7 @@
 /*   By: rsantos <rsantos@student.42lisboa.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/18 19:03:12 by rsantos           #+#    #+#             */
-/*   Updated: 2022/08/19 04:31:06 by rsantos          ###   ########.fr       */
+/*   Updated: 2022/08/19 06:23:35 by rsantos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,9 @@ static int	ft_printcheck(char c, va_list list)
 	if (c == 'u')
 		return(ft_put_nmr_u(va_arg(list, unsigned int)));
 	if (c == 'x')
-		return(ft_putnbr_base(va_arg(list, unsigned int), "0123456789abcdef"));
+		return(ft_putnbrbase_u(va_arg(list, unsigned int), "0123456789abcdef"));
 	if (c == 'X')
-		return(ft_putnbr_base)(va_arg(list, unsigned int), "0123456789ABCDEF");
+		return(ft_putnbrbase_u)(va_arg(list, unsigned int), "0123456789ABCDEF");
 	if (c == '%')
 		return(putchar('%'));
 	return(0);
@@ -62,10 +62,11 @@ int	ft_printf(const char*str, ...)
 int	main(void)
 {
 	int i = -22;
+	int x = -32;
 	char str[4] = "abcd";
 	char c = 'x';
 	
-	ft_printf("ola tudo bem\n%d\n%i\n%p\n%x\n%s\n%c\n", i, i, &i, i, str, c);
-	printf("ola tudo bem\n%d\n%i\n%p\n%x\n%s\n%c\n", i, i, &i, i, str, c);
-	return(0);
+	ft_printf("ola tudo bem\n%d\n%i\n%p\n %x \n%s\n%c\n %X\n", i, i, &i, i, str, c, x);
+	printf("ola tudo bem\n %d \n %i \n %p \n %x \n %s\n %c \n %X\n", i, i, &i, i, str, c, x);
+	return(0); 
 }

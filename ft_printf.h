@@ -6,7 +6,7 @@
 /*   By: rsantos <rsantos@student.42lisboa.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/18 04:39:31 by rsantos           #+#    #+#             */
-/*   Updated: 2022/08/19 02:32:33 by rsantos          ###   ########.fr       */
+/*   Updated: 2022/08/19 06:20:32 by rsantos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,7 @@ int	ft_putnbr_base(int nbr, char *base);
 int	ft_put_nmr_u(unsigned int nbr);
 int	ft_printf(const char*str, ...);
 unsigned long ft_put_pointer(unsigned long nb, char *str);
-
-
+int	ft_putnbrbase_u(unsigned int nbr, char *base);
 
 
 #endif
