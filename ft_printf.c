@@ -6,7 +6,7 @@
 /*   By: rsantos <rsantos@student.42lisboa.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/18 19:03:12 by rsantos           #+#    #+#             */
-/*   Updated: 2022/08/19 06:23:35 by rsantos          ###   ########.fr       */
+/*   Updated: 2022/08/19 07:06:01 by rsantos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,14 +59,18 @@ int	ft_printf(const char*str, ...)
 	return(nb);
 }
 
-int	main(void)
-{
-	int i = -22;
-	int x = -32;
-	char str[4] = "abcd";
-	char c = 'x';
+// int	main(void)
+// {
+// 	int i = -22;
+// 	int x = -32;
+// 	char str[4] = "abcd";
+// 	char c = 'x';
 	
-	ft_printf("ola tudo bem\n%d\n%i\n%p\n %x \n%s\n%c\n %X\n", i, i, &i, i, str, c, x);
-	printf("ola tudo bem\n %d \n %i \n %p \n %x \n %s\n %c \n %X\n", i, i, &i, i, str, c, x);
-	return(0); 
-}
+// 	ft_printf("O Meu printf: \nola tudo bem\n%d\n%i\n%p\n%x\n%s\n%c\n %X\n", i, i, &i, i, str, c, x);
+// 	printf("O printf original: \nola tudo bem\n%d\n%i\n%p\n%x\n%s\n%c\n %X\n", i, i, &i, i, str, c, x);
+// 	ft_printf("%d\n", ft_printf("Test0:\nHel%d\n", i));
+// 	printf("%d\n", printf("test1:\nHel%d\n", i));
+// 	return(0); 
+// }
+
+// gcc *.c *.h to compile this main and not the Makefile 
