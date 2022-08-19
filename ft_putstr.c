@@ -6,7 +6,7 @@
 /*   By: rsantos <rsantos@student.42lisboa.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/18 04:51:57 by rsantos           #+#    #+#             */
-/*   Updated: 2022/08/19 02:51:22 by rsantos          ###   ########.fr       */
+/*   Updated: 2022/08/19 04:26:05 by rsantos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,11 @@ int	ft_putstr(char *str)
 {
 	int i;
 
-	i = -1;
-	while(str[++i])
-		putchar(str[i]);
-	return(ft_strlen(str));
+	i = 0;
+	while(str[i])
+	{
+		write(1, &str[i], 1);
+		i++;
+	}
+	return(i);
 }

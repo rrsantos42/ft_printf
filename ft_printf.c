@@ -6,7 +6,7 @@
 /*   By: rsantos <rsantos@student.42lisboa.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/18 19:03:12 by rsantos           #+#    #+#             */
-/*   Updated: 2022/08/19 03:00:28 by rsantos          ###   ########.fr       */
+/*   Updated: 2022/08/19 04:31:06 by rsantos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@ static int	ft_printcheck(char c, va_list list)
 	if (c == 's')
 		return(ft_putstr(va_arg(list, char*)));
 	if (c == 'p')
-	{
-		ft_putstr("0x");
+	{	
+		write(1, "0x", 2);
 		return(ft_put_pointer(va_arg(list , unsigned long), "0123456789abcdef"));
 	}
 	if (c == 'd' || c == 'i')
@@ -48,7 +48,10 @@ int	ft_printf(const char*str, ...)
 	while (str[++i])
 	{
 		if(str[i] == '%')
+		{
 			nb += ft_printcheck(str[i + 1], list);
+			i++;
+		}
 		else
 			nb += ft_putchar(str[i]);
 	}
@@ -58,8 +61,11 @@ int	ft_printf(const char*str, ...)
 
 int	main(void)
 {
-	// int i = -22;
-	// char str[4] = "abcd";
+	int i = -22;
+	char str[4] = "abcd";
+	char c = 'x';
 	
-	ft_printf("ola tudo bem");
+	ft_printf("ola tudo bem\n%d\n%i\n%p\n%x\n%s\n%c\n", i, i, &i, i, str, c);
+	printf("ola tudo bem\n%d\n%i\n%p\n%x\n%s\n%c\n", i, i, &i, i, str, c);
+	return(0);
 }

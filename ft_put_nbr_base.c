@@ -6,7 +6,7 @@
 /*   By: rsantos <rsantos@student.42lisboa.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/18 05:42:01 by rsantos           #+#    #+#             */
-/*   Updated: 2022/08/19 02:49:03 by rsantos          ###   ########.fr       */
+/*   Updated: 2022/08/19 03:50:57 by rsantos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 	long long	j;
 
 	i = 0;
-	while (base[i] != '\0')
+	while (base[i])
 	{
 		j = 0;
 		if (base[0] == '\0' || base[1] == '\0')
@@ -65,7 +65,7 @@ int	ft_putnbr_base(int nbr, char *base)
 		}
 		else
 		num = nbr;
-		while (base[len] != '\0')
+		while (base[len])
 			len++;
 		if (num / len > 0)
 		{

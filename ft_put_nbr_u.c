@@ -6,7 +6,7 @@
 /*   By: rsantos <rsantos@student.42lisboa.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/18 06:04:39 by rsantos           #+#    #+#             */
-/*   Updated: 2022/08/19 02:51:11 by rsantos          ###   ########.fr       */
+/*   Updated: 2022/08/19 03:52:12 by rsantos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,10 @@ int	ft_put_nmr_u(unsigned int nbr)
 	
 	i = 0;
 	num = nbr;
-		if (num >= 10)
+	if (num >= 10)
 	{
 		ft_put_nmr_u(num / 10);
-		ft_put_nmr_u((num % 10) + '0');
+		ft_put_nmr_u(num % 10);
 	}
 	else
 	{
