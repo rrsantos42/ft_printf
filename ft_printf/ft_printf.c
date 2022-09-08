@@ -6,7 +6,7 @@
 /*   By: rsantos <rsantos@student.42lisboa.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/18 19:03:12 by rsantos           #+#    #+#             */
-/*   Updated: 2022/08/30 16:16:59 by bmiguel-         ###   ########.fr       */
+/*   Updated: 2022/09/08 18:10:09 by rsantos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,7 @@ int	ft_printf(const char*str, ...)
 	}
 	va_end(list);
 	return(nb);
+
 }
 
 //int	main(void)
