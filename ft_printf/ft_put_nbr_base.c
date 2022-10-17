@@ -6,72 +6,30 @@
 /*   By: rsantos <rsantos@student.42lisboa.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/18 05:42:01 by rsantos           #+#    #+#             */
-/*   Updated: 2022/08/19 03:50:57 by rsantos          ###   ########.fr       */
+/*   Updated: 2022/10/17 21:13:48 by rsantos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
- static	int	vrbase(char *base)
+int	ft_putnbr_base(int nbr, char *base, int bl)
 {
-	long long	i;
-	long long	j;
+	int	counter;
 
-	i = 0;
-	while (base[i])
+	if (nbr == -2147483648)
 	{
-		j = 0;
-		if (base[0] == '\0' || base[1] == '\0')
-			return (0);
-		if (base[i] == '-' || base[i] == '+')
-			return (0);
-		j = i + 1;
-		while (base[j] != '\0')
-		{	
-			if (base[i] == base[j])
-				return (0);
-			j++;
-		}	
-		i++;
+		ft_putstr("-2147483648");
+		return (11);
 	}
-	return (1);
-}
-static	int		ft_nb_len(int nbr)
-{
-	int x;
-	
-	x = 0;
+	counter = 0;
 	if (nbr < 0)
-		x++;
-	while(nbr)
 	{
-		nbr /= 10;
-		x++;
+		nbr *= -1;
+		write(1, "-", 1);
+		counter++;
 	}
-	return(x);
-}
-int	ft_putnbr_base(int nbr, char *base)
-{
-	long long		len;
-	unsigned int	num;
-
-	len = 0;
-	if (vrbase(base) == 1)
-	{
-		if (nbr < 0)
-		{
-			ft_putchar('-');
-			num = -nbr;
-		}
-		else
-		num = nbr;
-		while (base[len])
-			len++;
-		if (num / len > 0)
-		{
-			ft_putnbr_base(num / len, base);
-		}
-		ft_putchar(base[num % len]);
-	}
-	return(ft_nb_len(nbr));
+	if (nbr >= (int)ft_strlen(base))
+		counter += ft_putnbr_base(nbr / bl, base, bl);
+	counter += ft_putchar(base[nbr % bl]);
+	return (counter);
 }

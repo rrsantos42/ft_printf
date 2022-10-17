@@ -6,20 +6,23 @@
 /*   By: rsantos <rsantos@student.42lisboa.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/19 02:24:53 by rsantos           #+#    #+#             */
-/*   Updated: 2022/08/19 04:28:44 by rsantos          ###   ########.fr       */
+/*   Updated: 2022/10/17 21:08:15 by rsantos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-
-unsigned long ft_put_pointer(unsigned long nb, char *str)
+int	ft_put_pointer(size_t nbr, char *str, int counter, int ox)
 {
-	int nbr;
-	nbr = 2;
-	if (nb >= (unsigned long)ft_strlen(str))
-		nbr += ft_put_pointer((nb / ft_strlen(str)), str);
-	nbr += ft_putchar(str[nb % ft_strlen(str)]);
-	return(nbr);
-	
+	int	bl;
+
+	bl = 16;
+	if (!nbr)
+		return (ft_putstr("(nil)"));
+	if (!ox)
+		write(1, "0x", 2);
+	if (nbr >= (size_t)bl)
+		counter = ft_put_pointer(nbr / bl, str, counter, 1);
+	counter += ft_putchar(str[nbr % bl]);
+	return (counter);
 }

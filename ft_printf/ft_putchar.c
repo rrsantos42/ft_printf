@@ -6,7 +6,7 @@
 /*   By: rsantos <rsantos@student.42lisboa.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/18 04:49:46 by rsantos           #+#    #+#             */
-/*   Updated: 2022/08/19 01:48:29 by rsantos          ###   ########.fr       */
+/*   Updated: 2022/10/07 00:04:53 by rsantos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,5 +15,5 @@
 int	ft_putchar(char c)
 {
 	write(1, &c, 1);
-	return(1);
+	return (1);
 }
